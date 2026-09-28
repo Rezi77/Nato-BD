@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>გილოცავ დაბადების დღეს, ნათო! ❤️</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Cinzel+Decorative:wght@700&family=Dancing+Script:wght@600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    * { 
+      box-sizing: border-box; 
+      margin: 0; 
+      padding: 0; 
+      -webkit-tap-highlight-color: transparent;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #1e051d 0%, #3a0d2f 40%, #5c1339 70%, #2a0826 100%);
+      overflow: hidden;
+      position: relative;
+    }
+
+    body::before, body::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(90px);
+      pointer-events: none;
+      z-index: 0;
+      will-change: transform;
+    }
+    body::before {
+      width: 320px; height: 320px;
+      background: rgba(255, 75, 114, 0.45);
+      top: 10%; left: 15%;
+      animation: pulseGlow 8s infinite alternate ease-in-out;
+    }
+    body::after {
+      width: 380px; height: 380px;
+      background: rgba(255, 133, 162, 0.35);
+      bottom: 10%; right: 12%;
+      animation: pulseGlow 10s infinite alternate-reverse ease-in-out;
+    }
+
+    @keyframes pulseGlow {
+      0% { transform: scale(1) translate(0, 0); opacity: 0.5; }
+      100% { transform: scale(1.25) translate(20px, -20px); opacity: 0.85; }
+    }
+
+    .animated-bg {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      pointer-events: none; overflow: hidden; z-index: 1;
+    }
+
+    .floating-item {
+      position: absolute; bottom: -100px;
+      animation: floatUp infinite ease-in-out;
+      opacity: 0.85; z-index: 1; user-select: none;
+      display: flex; justify-content: center; align-items: center;
+      will-change: transform, opacity;
+      transform: translateZ(0);
+      image-rendering: -webkit-optimize-contrast;
+    }
+
+    .svg-icon {
+      width: 100%; height: 100%;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));
+    }
+
+    .balloon { width: 45px; height: 58px; }
+    .flower-float { width: 40px; height: 40px; }
+    .heart-float { width: 38px; height: 38px; }
+    .heart-small { width: 22px; height: 22px; }
+    .sparkle-float { width: 30px; height: 30px; }
+    .kiss-float { width: 38px; height: 38px; }
+
+    .item-1 { left: 2%; animation-duration: 9s; animation-delay: 0s; }
+    .item-2 { left: 8%; animation-duration: 13s; animation-delay: 2s; }
+    .item-3 { left: 15%; animation-duration: 10s; animation-delay: 4s; }
+    .item-4 { left: 22%; animation-duration: 12s; animation-delay: 1s; }
+    .item-5 { left: 28%; animation-duration: 7s; animation-delay: 0.2s; }
+    .item-6 { left: 35%; animation-duration: 11s; animation-delay: 3s; }
+    .item-7 { left: 42%; animation-duration: 14s; animation-delay: 5s; }
+    .item-8 { left: 49%; animation-duration: 8s; animation-delay: 0.5s; }
+    .item-9 { left: 55%; animation-duration: 6.5s; animation-delay: 1.8s; }
+    .item-10 { left: 62%; animation-duration: 12s; animation-delay: 2.5s; }
+    .item-11 { left: 68%; animation-duration: 10s; animation-delay: 1.5s; }
+    .item-12 { left: 75%; animation-duration: 13s; animation-delay: 4.5s; }
+    .item-13 { left: 81%; animation-duration: 8.5s; animation-delay: 0.7s; }
+    .item-14 { left: 88%; animation-duration: 9s; animation-delay: 3.5s; }
+    .item-15 { left: 94%; animation-duration: 11s; animation-delay: 0.8s; }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0) rotate(0deg) scale(0.8); opacity: 0; }
+      20% { opacity: 0.95; }
+      50% { transform: translateY(-60vh) rotate(180deg) scale(1.15); }
+      100% { transform: translateY(-115vh) rotate(360deg) scale(0.8); opacity: 0; }
+    }
+
+    .particle {
+      position: absolute;
+      pointer-events: none;
+      z-index: 100;
+      animation: explode 0.8s ease-out forwards;
+      will-change: transform, opacity;
+      image-rendering: -webkit-optimize-contrast;
+    }
+
+    @keyframes explode {
+      0% { opacity: 1; transform: translate(0, 0) scale(0.5) rotate(0deg); }
+      100% { opacity: 0; transform: translate(var(--tx), var(--ty)) scale(1.4) rotate(var(--rot)); }
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      padding: 16px 12px;
+      border-radius: 30px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), inset 0 0 15px rgba(255, 255, 255, 0.2);
+      text-align: center;
+      max-width: 520px; width: 95%;
+      height: 94vh; height: 94dvh;
+      position: relative; z-index: 10;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      outline: 1px solid rgba(255, 117, 140, 0.3);
+      outline-offset: -8px;
+      display: flex; flex-direction: column;
+      justify-content: space-between; align-items: center;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      will-change: transform;
+    }
+
+    .vine-corner {
+      position: absolute; width: 45px; height: 45px; z-index: 12; pointer-events: none;
+    }
+    .top-left { top: 6px; left: 6px; }
+    .top-right { top: 6px; right: 6px; transform: scaleX(-1); }
+
+    .page {
+      display: none; width: 100%; opacity: 0;
+      transform: scale(0.92) translateY(15px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      will-change: transform, opacity;
+    }
+
+    .page.active {
+      display: flex; flex-direction: column; align-items: center; justify-content: space-between; height: 100%;
+      opacity: 1; transform: scale(1) translateY(0);
+      position: relative;
+    }
+
+    .title-wrapper { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 4px; }
+
+    h1 {
+      color: #ff85a2; font-size: 1.5rem; line-height: 1.2;
+      text-shadow: 0 2px 10px rgba(255, 75, 114, 0.7);
+      animation: pulseTitle 2s infinite ease-in-out;
+      font-weight: 700;
+    }
+
+    @keyframes pulseTitle {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+    }
+
+    .barbie-title {
+      color: #ff9aae; font-size: 1.6rem; font-weight: 700; margin-bottom: 4px;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      min-height: 38px;
+      font-family: 'Great Vibes', 'Dancing Script', cursive, serif;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 12px rgba(255, 117, 140, 0.8);
+    }
+
+    .button-center-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #catch-btn {
+      background: linear-gradient(135deg, rgba(255, 75, 114, 0.85), rgba(255, 117, 140, 0.85));
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      color: white; border: 1px solid rgba(255, 255, 255, 0.4); padding: 12px 28px;
+      font-size: 1.1rem; font-weight: bold; border-radius: 50px;
+      cursor: pointer; box-shadow: 0 8px 20px rgba(255, 75, 114, 0.4);
+      outline: none; 
+      display: inline-flex; align-items: center; gap: 8px;
+      touch-action: manipulation;
+      white-space: nowrap;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+      position: relative;
+      /* ანიმაციის დრო შემცირდა 0.1 წამამდე სწრაფი რეაგირებისთვის */
+      transition: transform 0.1s ease-out;
+      will-change: transform;
+    }
+
+    .letter-hint-text {
+      color: #ffb6c1;
+      font-family: 'Dancing Script', cursive, serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      margin-bottom: 2px;
+      letter-spacing: 0.5px;
+      text-shadow: 0 2px 8px rgba(255, 75, 114, 0.7);
+    }
+
+    .heart-btn-wrapper { margin-top: 2px; display: flex; flex-direction: column; align-items: center; }
+
+    .beating-heart-btn {
+      background: transparent; border: none; cursor: pointer; outline: none;
+      position: relative; width: 46px; height: 46px;
+      display: flex; justify-content: center; align-items: center;
+      padding: 0;
+      animation: heartbeat 1.3s infinite ease-in-out;
+      touch-action: manipulation;
+      will-change: transform;
+    }
+
+    .beating-heart-btn img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 12px rgba(255, 75, 114, 0.7));
+      transition: filter 0.2s ease, transform 0.2s ease;
+      image-rendering: -webkit-optimize-contrast;
+    }
+
+    .beating-heart-btn:hover {
+      animation-play-state: paused;
+      transform: scale(1.18);
+    }
+
+    @keyframes heartbeat {
+      0% { transform: scale(1); }
+      14% { transform: scale(1.2); }
+      28% { transform: scale(1); }
+      42% { transform: scale(1.12); }
+      70% { transform: scale(1); }
+    }
+
+    .back-btn {
+      background: linear-gradient(135deg, rgba(255, 75, 114, 0.8), rgba(255, 117, 140, 0.8));
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      color: white; border: 1px solid rgba(255, 255, 255, 0.3); padding: 10px 22px;
+      font-size: 0.95rem; font-weight: bold; border-radius: 50px;
+      cursor: pointer; box-shadow: 0 4px 15px rgba(255, 75, 114, 0.3);
+      transition: transform 0.2s ease; margin-top: 10px; outline: none;
+      display: inline-flex; align-items: center; gap: 6px;
+      touch-action: manipulation;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    }
+
+    .back-btn:hover { transform: scale(1.05); }
+
+    .gallery-container-wrapper {
+      position: relative;
+      width: 100%; flex: 1;
+      padding: 6px;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 22px;
+      box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.1), 0 8px 25px rgba(0, 0, 0, 0.25);
+      margin: 2px 0;
+      overflow: hidden;
+    }
+
+    .gallery {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 12px; width: 100%; height: 100%;
+      overflow-y: auto; padding: 4px; scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .media-card {
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      width: 100%; height: 280px; position: relative; overflow: hidden; 
+      border-radius: 18px;
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 4px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      border: 1.5px solid rgba(255, 255, 255, 0.35);
+      transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.35s ease, background 0.35s ease;
+      cursor: pointer;
+      will-change: transform;
+    }
+
+    .media-card:nth-child(odd) { transform: rotate(-1.5deg); }
+    .media-card:nth-child(even) { transform: rotate(1.5deg); }
+
+    .media-card:hover {
+      transform: scale(1.03) rotate(0deg) translateY(-2px) !important;
+      background: rgba(255, 255, 255, 0.28);
+      box-shadow: 0 14px 28px rgba(255, 75, 114, 0.4);
+      z-index: 5;
+    }
+
+    .media-card img, .media-card video { 
+      width: 100%; 
+      height: 100%; 
+      object-fit: cover; 
+      background-color: rgba(0, 0, 0, 0.45);
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      filter: contrast(1.05) brightness(1.02);
+      image-rendering: -webkit-optimize-contrast;
+    }
+
+    .sparkle-icon {
+      position: absolute; top: 10px; right: 10px; width: 18px; height: 18px;
+      pointer-events: none; animation: twinkle 1.5s infinite alternate ease-in-out;
+      filter: drop-shadow(0 0 4px #ffd700);
+      z-index: 2;
+    }
+
+    @keyframes twinkle {
+      0% { transform: scale(0.8) rotate(0deg); opacity: 0.6; }
+      100% { transform: scale(1.25) rotate(45deg); opacity: 1; }
+    }
+
+    .handwritten-box {
+      background: rgba(45, 10, 35, 0.35);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      background-image: repeating-linear-gradient(transparent, transparent 33px, rgba(255, 182, 193, 0.15) 33px, rgba(255, 182, 193, 0.15) 34px);
+      padding: 22px 18px; border-radius: 24px;
+      color: #fff0f5;
+      font-size: 1.4rem;
+      line-height: 34px;
+      text-align: left;
+      border: 1.5px solid rgba(255, 182, 193, 0.4);
+      box-shadow: inset 0 0 25px rgba(255, 117, 140, 0.2), 0 12px 35px rgba(0, 0, 0, 0.4);
+      width: 100%; flex: 1; overflow-y: auto;
+      font-family: 'Charm', 'Great Vibes', 'Dancing Script', cursive, serif;
+      font-weight: 700;
+      position: relative;
+      letter-spacing: 1px;
+      text-shadow: 0 0 10px rgba(255, 182, 193, 0.8), 0 0 18px rgba(255, 75, 114, 0.5), 0 0 2px #ffd700;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .romantic-letter-title {
+      font-family: 'Cinzel Decorative', 'Great Vibes', cursive, serif;
+      font-size: 1.65rem;
+      color: #ff9aae;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+      text-shadow: 0 0 12px rgba(255, 117, 140, 0.8), 0 2px 5px rgba(0,0,0,0.5);
+    }
+
+    .pen-cursor::after {
+      content: '💖';
+      display: inline-block;
+      font-size: 1.1rem;
+      margin-left: 3px;
+      animation: heartPulse 0.4s infinite alternate;
+      vertical-align: baseline;
+      image-rendering: -webkit-optimize-contrast;
+    }
+
+    @keyframes heartPulse {
+      0% { transform: scale(1) rotate(-5deg); }
+      100% { transform: scale(1.25) rotate(5deg); }
+    }
+
+    .vine-divider {
+      width: 75%; height: 12px; margin: 2px auto;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20" fill="none" stroke="%23ff85a2" stroke-width="2"><path d="M0,10 Q25,0 50,10 T100,10"/><circle cx="25" cy="5" r="2" fill="%23ff4b72"/><circle cx="75" cy="15" r="2" fill="%23ff4b72"/><path d="M45,10 Q50,2 55,10 Q50,18 45,10" fill="%23ffd700"/></svg>');
+      background-repeat: repeat-x; background-size: 50px 12px; opacity: 0.85;
+    }
+
+    .title-icon { width: 26px; height: 26px; }
+
+    @media (max-width: 480px) {
+      .card { padding: 12px 8px; }
+      h1 { font-size: 1.3rem; }
+      .barbie-title { font-size: 1.4rem; }
+      .media-card { height: 240px; }
+      .handwritten-box { font-size: 1.25rem; line-height: 32px; padding: 16px 12px; }
+      .romantic-letter-title { font-size: 1.35rem; }
+      .letter-hint-text { font-size: 1.1rem; }
+      .beating-heart-btn { width: 42px; height: 42px; }
+    }
+  </style>
+</head>
+<body>
+
+  <audio id="bg-music" loop preload="auto">
+    <source src="milan.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- მფრინავი ფონის ელემენტები -->
+  <div class="animated-bg">
+    <div class="floating-item heart-float item-1"><svg class="svg-icon" viewBox="0 0 32 32"><path d="M16 28S2 18 2 10A8 8 0 0 1 16 6A8 8 0 0 1 30 10C30 18 16 28 16 28Z" fill="#FF4B72"/></svg></div>
+    <div class="floating-item heart-small item-2"><svg class="svg-icon" viewBox="0 0 32 32"><path d="M16 28S2 18 2 10A8 8 0 0 1 16 6A8 8 0 0 1 30 10C30 18 16 28 16 28Z" fill="#FF85A2"/></svg></div>
+    <div class="floating-item kiss-float item-3"><svg class="svg-icon" viewBox="0 0 36 36"><path d="M18 14C12 8 4 15 8 20C12 25 18 22 18 22C18 22 24 25 28 20C32 15 24 8 18 14Z" fill="#E83E8C"/><path d="M8 20C12 24 18 22 18 22C18 22 24 24 28 20" stroke="#FFD700" stroke-width="1.5"/></svg></div>
+    <div class="floating-item flower-float item-4"><svg class="svg-icon" viewBox="0 0 40 40"><circle cx="20" cy="10" r="8" fill="#FF85A2"/><circle cx="30" cy="20" r="8" fill="#FF85A2"/><circle cx="20" cy="30" r="8" fill="#FF85A2"/><circle cx="10" cy="20" r="8" fill="#FF85A2"/><circle cx="20" cy="20" r="6" fill="#FFD700"/></svg></div>
+    <div class="floating-item heart-float item-5"><svg class="svg-icon" viewBox="0 0 32 32"><path d="M16 28S2 18 2 10A8 8 0 0 1 16 6A8 8 0 0 1 30 10C30 18 16 28 16 28Z" fill="#FF758C"/></svg></div>
+    <div class="floating-item balloon item-6"><svg class="svg-icon" viewBox="0 0 50 65"><path d="M25 0C11.19 0 0 11.19 0 25C0 38.81 11.19 50 25 50C38.81 50 50 38.81 50 25C50 11.19 38.81 0 25 0Z" fill="#FF4B72"/><path d="M25 50L21 55H29L25 50Z" fill="#E83E8C"/><path d="M25 55C25 55 27 60 23 65" stroke="#FFFFFF" stroke-width="2"/><circle cx="15" cy="15" r="5" fill="#FFFFFF" opacity="0.4"/></svg></div>
+    <div class="floating-item heart-small item-7"><svg class="svg-icon" viewBox="0 0 32 32"><path d="M16 28S2 18 2 10A8 8 0 0 1 16 6A8 8 0 0 1 30 10C30 18 16 28 16 28Z" fill="#E83E8C"/></svg></div>
+    <div class="floating-item kiss-float item-8"><svg class="svg-icon" viewBox="0 0 36 36"><path d="M18 14C12 8 4 15 8 20C12 25 18 22 18 22C18 22 24 28 28 20C32 15 24 8 18 14Z" fill="#FF4B72"/></svg></div>
+    <div class="floating-item heart-float item-9"><svg class="svg-icon" viewBox="0 0 32 32"><path d="M16 28S2 18 2 10A8 8 0 0 1 16 6A8 8 0 0 1 30 10C30 18 16 28 16 28Z" fill="#FF3366"/></svg></div>
+    <div class="floating-item flower-float item-10"><svg class="svg-icon" viewBox="0 0 40 40"><circle cx="20" cy="12" r="7" fill="#FF758C"/><circle cx="28" cy="20" r="7" fill="#FF758C"/><circle cx="20" cy="28" r="7" fill="#FF758C"/><circle cx="12" cy="20" r="7" fill="#FF758C"/><circle cx="20" cy="20" r="5" fill="#FF4B72"/></svg></div>
+    <div class="floating-item sparkle-float item-11"><svg class="svg-icon" viewBox="0 0 30 30"><path d="M15 0L18.5 11.5L30 15L18.5 18.5L15 30L11.5 18.5L0 15L11.5 11.5L15 0Z" fill="#FFD700"/></svg></div>
+    <div class="floating-item heart-small item-12"><svg class="svg-icon" viewBox="0 0 32 32"><path d="M16 28S2 18 2 10A8 8 0 0 1 16 6A8 8 0 0 1 30 10C30 18 16 28 16 28Z" fill="#FF4B72"/></svg></div>
+    <div class="floating-item balloon item-13"><svg class="svg-icon" viewBox="0 0 50 65"><path d="M25 0C11.19 0 0 11.19 0 25C0 38.81 11.19 50 25 50C38.81 50 50 38.81 50 25C50 11.19 38.81 0 25 0Z" fill="#FFD700"/><path d="M25 50L21 55H29L25 50Z" fill="#E6C200"/><path d="M25 55C25 55 23 60 27 65" stroke="#FFFFFF" stroke-width="2"/></svg></div>
+    <div class="floating-item kiss-float item-14"><svg class="svg-icon" viewBox="0 0 36 36"><path d="M18 14C12 8 4 15 8 20C12 25 18 22 18 22C18 22 24 25 28 20C32 15 24 8 18 14Z" fill="#FF758C"/></svg></div>
+    <div class="floating-item heart-float item-15"><svg class="svg-icon" viewBox="0 0 32 32"><path d="M16 28S2 18 2 10A8 8 0 0 1 16 6A8 8 0 0 1 30 10C30 18 16 28 16 28Z" fill="#E83E8C"/></svg></div>
+  </div>
+
+  <div class="card">
+    <svg class="vine-corner top-left" viewBox="0 0 100 100" fill="none" stroke="#ff758c" stroke-width="3">
+      <path d="M5,5 Q50,5 50,50 T95,50" />
+      <path d="M5,5 Q5,50 50,50" stroke="#ffb6c1" stroke-width="2"/>
+      <circle cx="20" cy="20" r="4" fill="#ffd700"/>
+    </svg>
+    <svg class="vine-corner top-right" viewBox="0 0 100 100" fill="none" stroke="#ff758c" stroke-width="3">
+      <path d="M5,5 Q50,5 50,50 T95,50" />
+      <path d="M5,5 Q5,50 50,50" stroke="#ffb6c1" stroke-width="2"/>
+      <circle cx="20" cy="20" r="4" fill="#ffd700"/>
+    </svg>
+
+    <!-- გვერდი 1: დასაწყისი -->
+    <div id="page1" class="page active">
+      <div class="title-wrapper">
+        <svg class="title-icon" viewBox="0 0 40 40"><circle cx="20" cy="12" r="7" fill="#FF758C"/><circle cx="28" cy="20" r="7" fill="#FF758C"/><circle cx="20" cy="28" r="7" fill="#FF758C"/><circle cx="12" cy="20" r="7" fill="#FF758C"/><circle cx="20" cy="20" r="5" fill="#FFD700"/></svg>
+        <h1>გილოცავ ნათო დაბადების დღეს!</h1>
+        <svg class="title-icon" viewBox="0 0 40 40"><circle cx="20" cy="12" r="7" fill="#FF758C"/><circle cx="28" cy="20" r="7" fill="#FF758C"/><circle cx="20" cy="28" r="7" fill="#FF758C"/><circle cx="12" cy="20" r="7" fill="#FF758C"/><circle cx="20" cy="20" r="5" fill="#FFD700"/></svg>
+      </div>
+      <div class="vine-divider"></div>
+
+      <div class="button-center-container">
+        <button id="catch-btn" onclick="handleCatch(event)">
+          <span>დააჭირე</span>
+          <svg style="width:20px;height:20px;" viewBox="0 0 30 30"><path d="M15 0L18.5 11.5L30 15L18.5 18.5L15 30L11.5 18.5L0 15L11.5 11.5L15 0Z" fill="#FFFFFF"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- გვერდი 2: გალერეა -->
+    <div id="page2" class="page">
+      <div class="barbie-title">
+        <svg class="title-icon" viewBox="0 0 30 30"><path d="M3 24L6 10L12 16L15 4L18 16L24 10L27 24H3Z" fill="#FFD700"/><circle cx="15" cy="4" r="2.5" fill="#FF4B72"/><circle cx="6" cy="10" r="2" fill="#FF4B72"/><circle cx="24" cy="10" r="2" fill="#FF4B72"/></svg>
+        <span id="typed-title" class="pen-cursor"></span>
+        <svg class="title-icon" viewBox="0 0 30 30"><path d="M15 0L18.5 11.5L30 15L18.5 18.5L15 30L11.5 11.5L15 0Z" fill="#FFD700"/></svg>
+      </div>
+      
+      <div class="gallery-container-wrapper">
+        <div class="gallery" id="gallery-container">
+          <div class="media-card">
+            <svg class="sparkle-icon" viewBox="0 0 30 30"><path d="M15 0L18.5 11.5L30 15L18.5 18.5L15 30L11.5 11.5L15 0Z" fill="#FFD700"/></svg>
+            <img src="photo 1.jpg" alt="ნათო" loading="lazy">
+          </div>
+          <div class="media-card">
+            <svg class="sparkle-icon" viewBox="0 0 30 30"><path d="M15 0L18.5 11.5L30 15L18.5 18.5L15 30L11.5 11.5L15 0Z" fill="#FF758C"/></svg>
+            <video class="scroll-video" muted loop playsinline preload="metadata"><source src="video 1.mp4" type="video/mp4"></video>
+          </div>
+          <div class="media-card">
+            <svg class="sparkle-icon" viewBox="0 0 30 30"><path d="M15 0L18.5 11.5L30 15L18.5 18.5L15 30L11.5 11.5L15 0Z" fill="#FFD700"/></svg>
+            <img src="photo 2.jpg" alt="ნათო" loading="lazy">
+          </div>
+          <div class="media-card">
+            <svg class="sparkle-icon" viewBox="0 0 30 30"><path d="M15 0L18.5 11.5L30 15L18.5 18.5L15 30L11.5 11.5L15 0Z" fill="#FF758C"/></svg>
+            <video class="scroll-video" muted loop playsinline preload="metadata"><source src="video 2.mp4" type="video/mp4"></video>
+          </div>
+          <div class="media-card">
+            <svg class="sparkle-icon" viewBox="0 0 30 30"><path d="M15 0L18.5 11.5L30 15L18.5 18.5L15 30L11.5 11.5L15 0Z" fill="#FFD700"/></svg>
+            <img src="photo 3.jpg" alt="ნათო" loading="lazy">
+          </div>
+          <div class="media-card">
+            <svg class="sparkle-icon" viewBox="0 0 30 30"><path d="M15 0L18.5 11.5L30 15L18.5 18.5L15 30L11.5 11.5L15 0Z" fill="#FF758C"/></svg>
+            <video class="scroll-video" muted loop playsinline preload="metadata"><source src="video 3.mp4" type="video/mp4"></video>
+          </div>
+          <div class="media-card">
+            <svg class="sparkle-icon" viewBox="0 0 30 30"><path d="M15 0L18.5 11.5L30 15L18.5 18.5L15 30L11.5 11.5L15 0Z" fill="#FFD700"/></svg>
+            <img src="photo 4.jpg" alt="ნათო" loading="lazy">
+          </div>
+          <div class="media-card">
+            <svg class="sparkle-icon" viewBox="0 0 30 30"><path d="M15 0L18.5 11.5L30 15L18.5 18.5L15 30L11.5 11.5L15 0Z" fill="#FF758C"/></svg>
+            <video class="scroll-video" muted loop playsinline preload="metadata"><source src="video 4.mp4" type="video/mp4"></video>
+          </div>
+        </div>
+      </div>
+
+      <div class="vine-divider"></div>
+
+      <div class="heart-btn-wrapper">
+        <p class="letter-hint-text">გადადი წერილზე 👇</p>
+        <button class="beating-heart-btn" onclick="triggerHeartBurst(event); goToPage('page3')" aria-label="წერილზე გადასვლა">
+          <img src="https://em-content.zobj.net/source/apple/391/heart-with-arrow_1f498.png" alt="Red Heart with Arrow Emoji">
+        </button>
+      </div>
+    </div>
+
+    <!-- გვერდი 3: წერილი -->
+    <div id="page3" class="page">
+      <div class="title-wrapper">
+        <svg class="title-icon" viewBox="0 0 32 32"><path d="M4 6H28V26H4V6Z" fill="#FF758C" stroke="#FF4B72" stroke-width="2"/><path d="M4 6L16 16L28 6" stroke="#FFFFFF" stroke-width="2"/></svg>
+        <h1 class="romantic-letter-title">ყველაზე ლამაზ გოგოს </h1>
+        <svg class="title-icon" viewBox="0 0 32 32"><path d="M16 28S2 18 2 10A8 8 0 0 1 16 6A8 8 0 0 1 30 10C30 18 16 28 16 28Z" fill="#FF4B72"/></svg>
+      </div>
+
+      <div class="handwritten-box">
+        <p><span id="typed-letter" class="pen-cursor"></span></p>
+      </div>
+
+      <button class="back-btn" onclick="goToPage('page2')">
+        <span>⬅️ უკან დაბრუნება</span>
+      </button>
+    </div>
+  </div>
+
+  <script>
+    let clickCount = 0;
+    let musicStarted = false;
+    let titleTypingTimeout = null;
+    let letterTypingTimeout = null;
+    let videoObserver = null;
+    let isAnimating = false; // ბლოკირების ცვლადი
+
+    const fullTitleText = "გილოცავ პრინცესა";
+    const fullLetterText = "ნათო, გილოცავ! ძაან მიხარია, რომ გაგიცანი. ხშირად გეუბნები, რომ ძაან საყვარელი და ლამაზი ხარ. მართლა ეგრეა, არავინ მინახავს შენნაირი. თვალებს ვერ ვუჯერებ ზოგჯერ იმდენად მიყვარს შენი მიმიკები, რო იმორცხვები ხოლმე,შენი თვალები,შენი ხმაა სასწაული ხმა გაქ ნაზი და თბილი,მაგიტო მომწონს შენთან ლაპარალი რო ეგ ხმა მეტხანს ვისმინო ხოლმე,სასწაული მყავხარ,ახლა ყველაფერი სხვანაირად არის მარა ეგ ძაან მენატრება ეგ დრო, ყველაფერი კარგი მინდა შენთვის ნათო, ყველაფერს საუკეთესოს გისურვებ და, რაც მთავარია, ჯანმრთელობას, ნათო და რაც ჩანაფიქრები  გაქ ყველა მათგანის ასრულებას პრინცესა. ❤️";
+
+    const buttonTexts = [
+      "აბა კიდე 😜",
+      " რავი დააჭერ? 😛",
+      "მიდი ნათო 🏃‍♀️",
+      "ანუუ რავი 💥",
+      "რავი რავი 👑",
+      "კარგი ჰო 💖"
+    ];
+
+    const jumpPositions = [
+      { x: -90, y: -100 },
+      { x: 90, y: 100 },
+      { x: -90, y: 90 },
+      { x: 90, y: -100 },
+      { x: 0, y: -120 },
+      { x: 0, y: 110 }
+    ];
+
+    function createExplosion(x, y) {
+      const symbols = ['❤️', '🎈', '💖', '✨', '🌸', '💕', '⭐', '🌺', '👑', '🥳', '🌹'];
+      const particleCount = 15; // შემცირდა ოპტიმიზაციისთვის
+      const fragment = document.createDocumentFragment();
+
+      for (let i = 0; i < particleCount; i++) {
+        const p = document.createElement('div');
+        p.className = 'particle';
+        p.innerText = symbols[Math.floor(Math.random() * symbols.length)];
+        
+        const angle = Math.random() * Math.PI * 2;
+        const distance = 80 + Math.random() * 140; 
+        const tx = Math.cos(angle) * distance + 'px';
+        const ty = Math.sin(angle) * distance + 'px';
+        const rot = (Math.random() - 0.5) * 360 + 'deg';
+
+        p.style.setProperty('--tx', tx);
+        p.style.setProperty('--ty', ty);
+        p.style.setProperty('--rot', rot);
+        p.style.left = x + 'px';
+        p.style.top = y + 'px';
+        p.style.fontSize = (16 + Math.random() * 14) + 'px';
+
+        fragment.appendChild(p);
+      }
+      
+      document.body.appendChild(fragment);
+
+      setTimeout(() => {
+        const particles = document.querySelectorAll('.particle');
+        particles.forEach(p => p.remove());
+      }, 800);
+    }
+
+    function triggerHeartBurst(event) {
+      createExplosion(event.clientX, event.clientY);
+    }
+
+    function handleCatch(event) {
+      // თუ ანიმაცია მიმდინარეობს, იგნორირება უკეთდება სწრაფ დაჭერებს
+      if (isAnimating) return;
+      isAnimating = true;
+
+      createExplosion(event.clientX, event.clientY);
+      const audio = document.getElementById('bg-music');
+      
+      if (!musicStarted) {
+        audio.play().then(() => musicStarted = true).catch(e => console.log(e));
+      }
+
+      const btn = document.getElementById('catch-btn');
+
+      if (clickCount < buttonTexts.length) {
+        btn.querySelector('span').textContent = buttonTexts[clickCount];
+        const pos = jumpPositions[clickCount % jumpPositions.length];
+        btn.style.transform = `translate3d(${pos.x}px, ${pos.y}px, 0)`;
+        clickCount++;
+
+        // 110ms-ის შემდეგ ისევ ეხსნება ბლოკი (რადგან CSS transition არის 100ms)
+        setTimeout(() => {
+          isAnimating = false;
+        }, 110);
+
+      } else {
+        isAnimating = false;
+        goToPage('page2');
+      }
+    }
+
+    function typeText(elementId, text, speed, callback) {
+      const el = document.getElementById(elementId);
+      if (!el) return;
+      el.textContent = "";
+      el.classList.add("pen-cursor");
+      let i = 0;
+
+      function type() {
+        if (i < text.length) {
+          el.textContent += text.charAt(i);
+          i++;
+          const randomSpeed = speed + (Math.random() * 20 - 10);
+
+          if (elementId === 'typed-title') {
+            titleTypingTimeout = setTimeout(type, randomSpeed);
+          } else {
+            letterTypingTimeout = setTimeout(type, randomSpeed);
+          }
+        } else {
+          el.classList.remove("pen-cursor");
+          if (callback) callback();
+        }
+      }
+      type();
+    }
+
+    function goToPage(pageId) {
+      const currentPage = document.querySelector('.page.active');
+      const nextPage = document.getElementById(pageId);
+
+      if (currentPage && currentPage !== nextPage) {
+        currentPage.style.opacity = '0';
+        currentPage.style.transform = 'scale(0.92) translateY(-15px)';
+
+        setTimeout(() => {
+          currentPage.classList.remove('active');
+          currentPage.style.transform = '';
+          nextPage.classList.add('active');
+          
+          requestAnimationFrame(() => {
+            nextPage.style.opacity = '1';
+            nextPage.style.transform = 'scale(1) translateY(0)';
+          });
+
+          if (pageId === 'page2') {
+            initScrollVideos();
+            clearTimeout(titleTypingTimeout);
+            typeText("typed-title", fullTitleText, 80);
+          } else if (pageId === 'page3') {
+            clearTimeout(letterTypingTimeout);
+            typeText("typed-letter", fullLetterText, 45);
+          }
+        }, 300);
+      }
+    }
+
+    function initScrollVideos() {
+      if (videoObserver) return; 
+
+      const container = document.getElementById('gallery-container');
+      const videos = container.querySelectorAll('.scroll-video');
+
+      const options = {
+        root: container,
+        threshold: 0.5
+      };
+
+      videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          const video = entry.target;
+          if (entry.isIntersecting) {
+            if (video.paused) video.play().catch(e => console.log(e));
+          } else {
+            if (!video.paused) video.pause();
+          }
+        });
+      }, options);
+
+      videos.forEach(video => videoObserver.observe(video));
+    }
+  </script>
+</body>
+</html>
